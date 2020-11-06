@@ -1,0 +1,1 @@
+snowsql -o output_format=json -o remove_comments=true -o header=true -o timing=false -o friendly=false -a <ACCOUNT> -u <USER> -q 'select * from table(information_schema.warehouse_metering_history(dateadd('hours',-1,current_date())));' | tail -n +2 > metering.json
