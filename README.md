@@ -1,5 +1,5 @@
 # snowflake-scripts
-a set of scripts to fetch data from snowflake
+a set of scripts to fetch data from snowflake. They use data from information_schema which is real time and account_usage which has some data latency.
 
 ## Prerequisites
 1. Install SnowSQL CLI
