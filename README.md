@@ -5,18 +5,12 @@ a set of scripts to fetch data from snowflake. They use data from information_sc
 1. Install SnowSQL CLI
 2. Configure SnowSQL CLI at `~/.snowsql/config`
 3. Ensure the user you are connecting with has sufficient privileges
-4. Replace username and account in scripts
 
 ## Usage
 Create shell scripts to run these queries using SnowSQL. Here is an example of SnowSQL command:
 
-`snowsql -o output_format=json -o remove_comments=true -o header=true -o timing=false -o friendly=false -a <ACCOUNT> -u <USER> -q '<QUERY>' | tail -n +2 > table_metrics.json`
+`snowsql -o output_format=json -o remove_comments=true -o header=true -o timing=false -o friendly=false -a <ACCOUNT> -u <USER> -q '<QUERY>' | tail -n +2 > /tmp/file.json`
 
-The above command uses SnowSQL to execute a query, with machine readable output in JSON format which is tailed to a file. This file can be read by nri-flex.
+The above command uses SnowSQL to execute a query, with machine readable output in JSON format.
 
-Setup 1 minute cron jobs to run these scripts by running `crontab -e`
-
-For example:
-`* * * * * /home/user/script_name.sh`
-
-Use New Relic flex to send the contents of the files to New Relic
+The output can be sent to New Relic using nri-flex and the file api.

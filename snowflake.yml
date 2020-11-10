@@ -1,0 +1,15 @@
+integrations:
+    - name: nri-flex
+      interval: 30s
+      config:
+        name: snowflake
+        global:
+            custom-attributes:
+              environment: production
+        apis:
+          - name: snowFlakeQueryHistory
+            file: /tmp/snowflake-query-history.json
+          - name: snowFlakeQueryHistory
+            file: /tmp/snowflake-query-history.json
+          - name: snowflakeFailedLogins
+            file: /tmp/snowflake-failed-logins.json
