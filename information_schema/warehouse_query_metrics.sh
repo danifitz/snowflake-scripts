@@ -1,1 +1,0 @@
-snowsql -o output_format=json -o remove_comments=true -o header=true -o timing=false -o friendly=false -a <ACCOUNT> -u <USER> -q 'select * from table(information_schema.query_history_by_warehouse());' | tail -n +2 > warehouse.json
